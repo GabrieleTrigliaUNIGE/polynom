@@ -16,37 +16,36 @@ using namespace std;
 
 class Polynomial {
 private:
-    double* coeff;
-    int degree;
+    double* coeff;  											// puntatore ad array di double
+    int degree; 												// grado del polinomio 
 
 public:
-    
 	/// @name CONSTRUCTORs and DESTRUCTOR 
 	/// @{
-    Polynomial();
-	Polynomial(const double* coefficients, int size);
-    Polynomial(const Polynomial& p);
-    ~Polynomial();
+    Polynomial();  // costruttore di default 
+	Polynomial(const double* coefficients, int size); 			// costruttore di default con passaggio di parametri 
+    Polynomial(const Polynomial& p); 							// costruttore di copia 
+    ~Polynomial();												// distruttore dei Polynomial
 	/// @}
 
 	/// @name OPERATORS 
 	/// @{
-    Polynomial& operator=(const Polynomial& p);
-	Polynomial operator+(const Polynomial& p);
-	bool operator==(const Polynomial& p);
+    Polynomial& operator=(const Polynomial& p); 				// overload dell'operatore =
+	Polynomial operator+(const Polynomial& p); 					// overload dell'operatore +
+	bool operator==(const Polynomial& p); 						// overload dell'operatore ==
 	/// @}
 
 
-	void SetPolynomial(const double* coefficients, int size);
-    double GetValue(double in) const;
+	void SetPolynomial(const double* coefficients, int size);	// SETTER per l'attributo
+    double GetValue(double in) const;							// metodo che restituisce il valore del polinomio valutato in (in)
 	
-	void Reset();
+	void Reset();												// metodo per resettare l'oggetto
 
 	/// @name DEBUG and SERIALIZATION 
 	/// @{
-	void ErrorMessage(const char *string); 
-	void WarningMessage(const char *string);
-	void Dump();
+	void ErrorMessage(const char *string); 						// metodo che stampa gli errori
+	void WarningMessage(const char *string);					// metodo che stampa i warning
+	void Dump();												// metodo dump
 	/// @}
 };
 

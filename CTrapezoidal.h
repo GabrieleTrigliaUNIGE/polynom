@@ -7,6 +7,7 @@
 class Trapezoidal : public Integral {
 public:
 
+    /// @brief  Costruttore di default
     Trapezoidal();
     /// @brief Costruttore: accetta opzionalmente un puntatore a Polynomial
     Trapezoidal(Polynomial* p);
